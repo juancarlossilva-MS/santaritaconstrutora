@@ -35,18 +35,18 @@ export default function Banner() {
     console.log('submitting...');
   };
 
-  return (
+  return (<>
+        <video src={require('../assets/video/videobg.mp4')} loop muted autoPlay sx={styles.video} />
+       
     <Box as="section" id="home" sx={styles.section}>
       <Container>
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
             <Heading as="h1" sx={styles.heroTitle}>
-              Coworking space that will feel like home.
+              Venha realizar o sonho da sua construção
             </Heading>
             <Text as="p" sx={styles.desc}>
-              Whether you’re an established enterprise or a growing startup,
-              discover spaces that inspire which will best your most impactful
-              work.
+              Temos o projeto certo pra você.
             </Text>
             <Box as="form" onSubmit={handleSubmit}>
               <Select
@@ -63,27 +63,44 @@ export default function Banner() {
                 ))}
               </Select>
               <Button type="submit" sx={styles.button} variant="primary">
-                Subscribe
+                Chame-nos no whatsapp
               </Button>
             </Box>
           </Box>
         </Box>
       </Container>
+     
     </Box>
-  );
+ </> );
 }
 
 const styles = {
-  section: {
-    background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bannerBg}) no-repeat center top / cover`,
-    backgroundSize: ['100%', null, null, null, 'cover'],
+  video:{
+    objectFit:"cover",
+    position:"absolute",
+    width:"100%",
+    filter: "brightness(0.5)"
   },
+  bg:{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      width: "100vw",
+      height: "100vh",
+      transform: "translate(-50%, -50%)",
+    
+  },
+  /*section: {
+    background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://btgnews.tv.br/video-bg.MP4) no-repeat center top / cover`,
+    backgroundSize: ['100%', null, null, null, 'cover'],
+  },*/
   contentWrapper: {
     display: 'flex',
     alignItems: 'center',
     minHeight: [null, null, null, null, '50vh', '100vh'],
   },
   bannerContent: {
+    position:"absolute",
     backgroundColor: rgba('#fff', 0.93),
     boxShadow: [
       '0px 10px 16px rgba(52, 61, 72, 0.12)',
