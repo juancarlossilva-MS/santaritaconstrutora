@@ -36,7 +36,7 @@ export default function Banner() {
   };
 
   return (<>
-        <video src={require('../assets/video/videobg.mp4')} loop muted autoPlay sx={styles.video} />
+        <video src={"/videobg.mp4"} loop muted autoPlay sx={styles.video} />
        
     <Box as="section" id="home" sx={styles.section}>
       <Container>

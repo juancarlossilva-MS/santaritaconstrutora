@@ -9,7 +9,7 @@ import Image from 'components/image';
 import expand from 'assets/images/icons/expand.png';
 import users from 'assets/images/icons/users.png';
 import wifi from 'assets/images/icons/wifi.png';
-import slider1 from 'assets/images/features/1.png';
+import slider1 from 'assets/images/features/2.png';
 import slider2 from 'assets/images/features/2.webp';
 import slider3 from 'assets/images/features/3.png';
 
@@ -44,8 +44,8 @@ const data = {
     {
       id: 1,
       image: slider1,
-      title: 'Kin Co-working Space',
-      desc: '442 Broadway, New York',
+      title: 'Casas populares',
+      desc: 'construcoes em alto nivel',
     },
     {
       id: 2,
@@ -109,7 +109,7 @@ const FeaturedSpace = () => {
           <Box sx={styles.leftContent}>
             <SectionHeading
               sx={styles.heading}
-              title="Some good place to where can build your startup business"
+              title="A Construtora Santa Rita quer ser sua parceira para tirar seu sonho do papel"
               description="Co-working offers beautifully crafted workspaces where people can create, connect, and grow their businesses at prime locations in multiple cities."
             />
             <Box sx={styles.featureWrapper}>

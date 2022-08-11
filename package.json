@@ -32,6 +32,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "next-sitemap": "^1.2.4",
+    "next-videos": "^1.5.0",
     "prettier": "^2.1.2"
   }
 }
