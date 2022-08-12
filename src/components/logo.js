@@ -12,7 +12,7 @@ export default function Logo({ white }) {
         variant: 'links.logo',
       }}
     >
-      <Image src={white ? logoWhite : logo} alt="startup landing logo" width={170} />
+      <Image src={white ? logoWhite : logo} alt="construtora santa rita logo" width={170} />
     </Link>
   );
 }

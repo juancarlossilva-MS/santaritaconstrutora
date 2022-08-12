@@ -78,6 +78,7 @@ const styles = {
     objectFit:"cover",
     position:"absolute",
     width:"100%",
+    height:"100%",
     filter: "brightness(0.5)"
   },
   bg:{
