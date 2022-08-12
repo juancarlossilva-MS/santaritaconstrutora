@@ -1,23 +1,23 @@
 export default [
   {
-    path: 'home',
-    label: 'Home',
+    path: 'inicio',
+    label: 'Início',
   },
   {
     path: 'clients',
-    label: 'Clients',
+    label: 'Clientes',
   },
   {
     path: 'feature',
-    label: 'Feature',
+    label: 'Serviços',
   },
   {
     path: 'gallery',
-    label: 'Gallery',
+    label: 'Galeria',
   },
   {
     path: 'pricing',
-    label: 'Pricing',
+    label: 'Contate-nos',
   },
   {
     path: 'blog',

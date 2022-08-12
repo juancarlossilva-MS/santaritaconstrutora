@@ -24,19 +24,19 @@ const data = {
     {
       id: 1,
       icon: expand,
-      title: '1000 ft2',
+      title: 'Reservatórios',
       description: 'you will get 1000ft square space facility here.',
     },
     {
       id: 2,
       icon: users,
-      title: '80 Members',
+      title: 'Bebedouros',
       description: 'you will get advantage to live 80+ member here.',
     },
     {
       id: 3,
       icon: wifi,
-      title: '100 mbps',
+      title: 'Encanamentos',
       description: 'Internet speed is much better than others.',
     },
   ],
@@ -110,7 +110,7 @@ const FeaturedSpace = () => {
             <SectionHeading
               sx={styles.heading}
               title="A Construtora Santa Rita quer ser sua parceira para tirar seu sonho do papel"
-              description="Co-working offers beautifully crafted workspaces where people can create, connect, and grow their businesses at prime locations in multiple cities."
+              description="Além de construções e reformas oferecemos outros serviços para você amigo do campo."
             />
             <Box sx={styles.featureWrapper}>
               {data?.feature?.map((feature) => (

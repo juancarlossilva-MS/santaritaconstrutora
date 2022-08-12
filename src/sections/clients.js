@@ -97,7 +97,7 @@ const Clients = () => {
       <Container>
         <SectionHeading
           slogan="Meet Our Clients"
-          title="This guys are using our service and they're more than happier ever."
+          title="Conheça os parceiros que acreditam no nosso projeto."
         />
         <Slider sx={styles.clients} {...settings}>
           {clients?.map((client) => (
