@@ -71,7 +71,7 @@ const styles = {
       null,
       'none',
     ],
-    maxWidth: [null, null, null, 600, 500, null, 650],
+    maxWidth: ["100%", null, null, 600, 500, null, 650],
     padding: [
       '20px',
       '30px',
