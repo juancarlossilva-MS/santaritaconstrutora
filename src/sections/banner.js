@@ -1,9 +1,10 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Heading, Text, Button } from 'theme-ui';
+import { jsx, Box, Container, Heading,  } from 'theme-ui';
 import { rgba } from 'polished';
-
-import Select from 'components/select';
+import { FaArrowDown } from 'react-icons/fa';
+import { NavLink } from 'components/link';
 import mapMarker from 'assets/images/icons/map-marker.png';
+import {useState,useEffect, } from 'react'
 
 const options = [
   {
@@ -28,45 +29,63 @@ const options = [
   },
 ];
 
+
 export default function Banner() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('submitting...');
+  
+
+  const [text, setText] = useState('');
+  const [original, setOriginal] = useState('Venha realizar o sonho da sua construção');
+  function changeText(){
+    let textos = [
+      "Venha realizar o sonho da sua construção",
+      "Vamos juntos tirar esse projeto do papel",
+      "A construtora Santa Rita tem o melhor para você!",
+      "Conheça nossos planos e vamos fazer um excelente negócio."
+    ]
+    let valor = sessionStorage.getItem("valor") ? sessionStorage.getItem("valor") : 1;
+    setTimeout(()=>{
+      setOriginal(textos[valor])
+      valor++;
+      if(valor > 3) valor = 0;
+      sessionStorage.setItem("valor",valor)
+    
+    },3000);
+    
+    
+    
+  }
+  
+  
+  const typeWriter = (text, i = 0) => {
+    if (i < original.length) {
+      setText(text.slice(0, i + 1));
+      setTimeout(() => {
+        typeWriter(text, i + 1);
+      }, 75);
+    }else{
+  
+      changeText();
+    }
   };
 
+  useEffect(() => {
+    typeWriter(original);
+  }, [original]);
+
+  
+
   return (<>
-        <video src={"/videobg.mp4"} loop muted autoPlay sx={styles.video} />
        
     <Box as="section" id="home" sx={styles.section}>
+        <video src={"/videobg.mp4"} loop muted autoPlay sx={styles.video} />
       <Container>
         <Box sx={styles.contentWrapper}>
-          <Box sx={styles.bannerContent}>
             <Heading as="h1" sx={styles.heroTitle}>
-              Venha realizar o sonho da sua construção
+              {text}
             </Heading>
-            <Text as="p" sx={styles.desc}>
-              Temos o projeto certo pra você.
-            </Text>
-            <Box as="form" onSubmit={handleSubmit}>
-              <Select
-                id="location"
-                label="Find workplace"
-                defaultValue={options[1].label}
-                sx={styles.select}
-                icon={mapMarker}
-              >
-                {options?.map((option) => (
-                  <option value={option.value} key={option.id}>
-                    {option.label}
-                  </option>
-                ))}
-              </Select>
-              <Button type="submit" sx={styles.button} variant="primary">
-                Chame-nos no whatsapp
-              </Button>
-            </Box>
-          </Box>
         </Box>
+        <NavLink path={"clients"} label={<FaArrowDown sx={styles.arrow}/>}/>
+        
       </Container>
      
     </Box>
@@ -90,14 +109,15 @@ const styles = {
       transform: "translate(-50%, -50%)",
     
   },
-  /*section: {
-    background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://btgnews.tv.br/video-bg.MP4) no-repeat center top / cover`,
+  section: {
+    height: "100vh",
+    background: `no-repeat center top / cover`,
     backgroundSize: ['100%', null, null, null, 'cover'],
-  },*/
+  },
   contentWrapper: {
     display: 'flex',
     alignItems: 'center',
-    minHeight: [null, null, null, null, '50vh', '100vh'],
+    minHeight: ["100vh", null, null, null, '50vh', '100vh'],
   },
   bannerContent: {
     position:"absolute",
@@ -120,20 +140,34 @@ const styles = {
       '50px 60px 90px',
     ],
     borderRadius: 5,
-    m: ['110px 0 0', null, null, '110px auto 0', '60px 0 0', null, 0],
+    m: ['300% 0 0', null, null, '110px auto 0', '60px 0 0', null, 0],
     '@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ': {
       maxWidth: 515,
       mt: 70,
       padding: '30px 50px 65px',
     },
   },
+  arrow:{
+    position:"absolute",
+    fontSize:103,
+    animation: "anima 750ms infinite alternate",
+    margin:0,
+    top: "82%",
+    left: "50%",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    filter:"drop-shadow(0px 0px 10px #ccc)"
+  },
   heroTitle: {
-    fontSize: [22, 28, 28, 40, , 5, 6],
+    position:"absolute",
+    fontSize: [56, 28, 28, "103px !important", , 5, 6],
     fontWeight: 700,
+    maxWidth:["100%", , , "45%", , , ],
+    textShadow:"#fff 2px -2px, #fff -2px 2px, #fff 2px 2px, #fefefe -2px -2px",
     letterSpacing: 'heading',
-    lineHeight: [1.4, null, null, null, null, null, 1.57],
+    lineHeight: [1.4, null, null, "1.1 !important", null, null, 1.57],
     '@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ': {
-      fontSize: 40,
+      fontSize: "103px !important",
     },
   },
   desc: {

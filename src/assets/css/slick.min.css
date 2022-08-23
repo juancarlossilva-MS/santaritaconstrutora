@@ -81,3 +81,14 @@
 .slick-arrow.slick-hidden {
   display: none;
 } /*# sourceMappingURL=slick.min.css.map */
+
+@keyframes anima {
+
+  0% {
+    transform: translateY(-8px);
+  }
+  100% {
+      transform: translateY(8px);
+  }
+  
+}
