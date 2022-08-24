@@ -3,31 +3,8 @@ import { jsx, Box, Container, Heading,  } from 'theme-ui';
 import { rgba } from 'polished';
 import { FaArrowDown } from 'react-icons/fa';
 import { NavLink } from 'components/link';
-import mapMarker from 'assets/images/icons/map-marker.png';
 import {useState,useEffect, } from 'react'
 
-const options = [
-  {
-    id: 1,
-    label: 'Brooklyn, New york',
-    value: 'Brooklyn, New york',
-  },
-  {
-    id: 2,
-    label: 'Atlanta, Georgia',
-    value: 'Atlanta, Georgia',
-  },
-  {
-    id: 3,
-    label: 'Minneapolis, Minnesota',
-    value: 'Minneapolis, Minnesota',
-  },
-  {
-    id: 4,
-    label: 'Chicago, Illinois',
-    value: 'Chicago, Illinois',
-  },
-];
 
 
 export default function Banner() {
@@ -100,15 +77,6 @@ const styles = {
     height:"100%",
     filter: "brightness(0.5)"
   },
-  bg:{
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      width: "100vw",
-      height: "100vh",
-      transform: "translate(-50%, -50%)",
-    
-  },
   section: {
     height: "100vh",
     background: `no-repeat center top / cover`,
@@ -178,22 +146,5 @@ const styles = {
     '@media only screen and (min-height: 720px) and (max-height: 760px), (min-width: 1501px) and (max-width: 1560px) ': {
       mt: 15,
     },
-  },
-  select: {
-    marginTop: 30,
-    select: {
-      minWidth: ['auto', 'auto', 'initial'],
-    },
-  },
-  button: {
-    fontSize: 20,
-    fontWeight: 700,
-    marginTop: 20,
-    width: '100%',
-    minHeight: [50, null, null, null, 60],
-    fontSize: [16, 16, 16, 20],
-    ':focus': {
-      outline: '0 none',
-    },
-  },
+  }
 };
